@@ -337,7 +337,7 @@ export default function Home() {
           <motion.div className="relative z-10" initial={{ opacity: 0, scale: 0.8, y: 30 }} animate={{ opacity: 1, scale: 1, y: 0 }} transition={{ delay: 0.6, duration: 1, type: "spring", stiffness: 100 }}>
             <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }} className="w-80 h-80 md:w-[32rem] md:h-[32rem] rounded-full bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border-2 border-cyan-500/30 flex items-center justify-center overflow-hidden relative">
               <motion.div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-transparent opacity-50" animate={{ rotate: 360 }} transition={{ duration: 10, repeat: Infinity, ease: "linear" }} />
-              <span className="text-9xl z-10"><img src="dev.png.png" alt="Dev Avatar" /></span>
+              <span className="text-9xl z-10"><img src="/dev.png.png" alt="Dev Avatar" /></span>
             </motion.div>
           </motion.div>
 
