@@ -5,6 +5,9 @@ export default function OverlayMenu({ isOpen, onClose }) {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 1024;
   const origin = isMobile ? "95% 8%" : "50% 8%";
 
+  // Reduce animation duration and complexity on mobile for better performance
+  const animationDuration = isMobile ? 0.3 : 0.7;
+  
   return (
     <AnimatePresence>
       {isOpen && (
@@ -13,10 +16,11 @@ export default function OverlayMenu({ isOpen, onClose }) {
           initial={{ clipPath: `circle(0% at ${origin})` }}
           animate={{ clipPath: `circle(150% at ${origin})` }}
           exit={{ clipPath: `circle(0% at ${origin})` }}
-          transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+          transition={{ duration: animationDuration, ease: [0.4, 0, 0.2, 1] }}
           style={{
             background: "rgba(0, 0, 0, 0.95)",
-            backdropFilter: "blur(10px)",
+            // Disable backdrop filter on mobile for better performance
+            ...(isMobile ? {} : { backdropFilter: "blur(10px)" }),
           }}
         >
           {/* Close Button */}
@@ -28,18 +32,21 @@ export default function OverlayMenu({ isOpen, onClose }) {
             <FiX />
           </button>
 
-          {/* Subtle light gradient floating behind */}
-          <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-[100px] opacity-40"></div>
+          {/* Simplified background effect on mobile */}
+          {!isMobile && (
+            <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-[100px] opacity-40"></div>
+          )}
 
-          {/* Menu items */}
+          {/* Menu items with reduced animations on mobile */}
           <ul className="space-y-8 text-center">
-            {["Home", "About", "Skills", "Experince", "Contact"].map(
+            {['Home', 'About', 'Skills', 'Experience', 'Contact'].map(
               (item, index) => (
                 <motion.li
                   key={item}
-                  initial={{ y: 20, opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ delay: 0.3 + index * 0.1 }}
+                  initial={isMobile ? {} : { y: 20, opacity: 0 }}
+                  animate={isMobile ? {} : { y: 0, opacity: 1 }}
+                  transition={isMobile ? {} : { delay: 0.3 + index * 0.1 }}
+                  className={isMobile ? "opacity-100 translate-y-0" : ""}
                 >
                   <a
                     href={`#${item.toLowerCase()}`}
