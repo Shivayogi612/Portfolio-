@@ -70,7 +70,7 @@ export default function Home() {
         <div className="flex flex-col justify-center h-full mt-9 text-center lg:text-left space-y-6">
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 1, delay: 0.2 }}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-5xl font-bold text-gray-400 mb-4">HI I'm</h1>
-            <motion.h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-6xl mb-4 font-bold text-gray-200 relative inline-block">
+            <motion.h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-6xl mb-4 font-bold text-blue-400 to-purples-400 relative inline-block">
               SHIVAYOGI
             </motion.h1>
           </motion.div>

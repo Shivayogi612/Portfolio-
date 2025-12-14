@@ -24,14 +24,13 @@ const About = () => {
           
           <p>
             Right now, I'm focused on React and trying to write cleaner code. 
-            Every project teaches me something—whether it's a better way to structure 
+            Every project teaches me something whether it's a better way to structure 
             components or just realizing I've been overthinking a simple problem.
           </p>
 
           <p>
             I'm not trying to be the best developer. I'm just trying to be better 
-            than I was yesterday. Some days that means learning a new hook, other 
-            days it's just understanding why my CSS broke for the tenth time.
+            than I was yesterday. 
           </p>
 
           {/* Simple Code Block */}
