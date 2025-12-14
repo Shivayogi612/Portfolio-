@@ -2,7 +2,7 @@ import { useState } from "react";
 import OverlayMenu from "./OverlayMenu";
 import Logo from "../assets/Logo.png"
 import { FiMenu } from "react-icons/fi";
-
+import AnimatedButton from "./AnimatedButton";
 
 export default function Navbar(){
  
@@ -28,13 +28,9 @@ export default function Navbar(){
             </div>
 
             <div className="hidden lg:block">
-                <a
-                    href="#contact"
-                    className="relative inline-flex items-center justify-center px-6 py-3 overflow-hidden font-semibold text-white transition-all duration-300 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 shadow-lg hover:shadow-xl hover:scale-105 hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 focus:outline-none focus:ring-4 focus:ring-purple-300"
-                >
-                    <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-white/20 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
-                    <span className="relative">Reach Out</span>
-                </a>
+                <AnimatedButton href="#contact">
+                    Reach Out
+                </AnimatedButton>
             </div>
 
 
